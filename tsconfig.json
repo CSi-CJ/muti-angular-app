@@ -6,5 +6,30 @@
 */
 {
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./projects/administration/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/administration/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/gatling/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/gatling/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/tools/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/tools/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/vendors/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/vendors/tsconfig.spec.json"
+    }
+]
 }
