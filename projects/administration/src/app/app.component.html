@@ -3,5 +3,61 @@
     Welcome to {{ title }}!
   </h1>
   <div><img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,..."></div>
-  <button mat-raised-button color="primary" >Click Me!</button>
+  <button mat-raised-button color="primary">Click Me!</button>
+
+  <p>The hero's birthday is {{ birthday | date }}</p>
+
+  <div>
+    <p ngNonBindable>{{ 'Angular' | uppercase }}</p>
+    <p>{{ 'Angular' | uppercase }}</p>
+  </div>
+  <div>
+    <p ngNonBindable>{{ 'Angular' | lowercase }}</p>
+    <p>{{ 'Angular' | lowercase }}</p>
+  </div>
+  <div>
+    <p ngNonBindable>{{ 3.14159265 | number: '1.4-4' }}</p>
+    <p>{{ 3.14159265 | number: '1.4-4' }}</p>
+  </div>
+
+  <div>
+    <p ngNonBindable>{{ { name: 'semlinker' } | json }}</p>
+    <p>{{ {name: 'semlinker'} | json }}</p>
+  </div>
+  <div>
+    <p ngNonBindable>{{ 'semlinker' | slice:0:3 }}</p>
+    <p>{{ 'semlinker' | slice:0:3 }}</p>
+  </div>
+  <div>
+    <p ngNonBindable>{{ 'semlinker' | slice:0:3 | uppercase }}</p>
+    <p>{{ 'semlinker' | slice:0:3 | uppercase }}</p>
+  </div>
+
+  <div>
+    <p>{{'beijing' | welcome}}</p>
+  </div>
+
+  <div>
+    <p>The hero's birthday is {{ birthday | date: getFormat() | uppercase }} </p>
+    <button (click)="toggleFormat()">Toggle Format</button>
+  </div>
+
+<!--  <div>-->
+<!--    <h2>Power Booster</h2>-->
+<!--    <p>Super power boost: {{2 | exponentialStrength: 10}}</p>-->
+<!--  </div>-->
+
+<!--  <div>-->
+<!--    <h2>Power Boost Calculator</h2>-->
+<!--    <div>Normal power: <input [(ngModel)]="power"></div>-->
+<!--    <div>Boost factor: <input [(ngModel)]="factor"></div>-->
+<!--    <p>-->
+<!--      Super Hero Power: {{power | exponentialStrength: factor}}-->
+<!--    </p>-->
+<!--  </div>-->
+
+
+
+
 </div>
+
