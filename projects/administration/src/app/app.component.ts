@@ -3,6 +3,10 @@ import {HelloWorldService} from '../../../tools/src/lib/hello-world.service';
 import {A, B, C, D} from 'projects/java/design-pattern/principle/interface-segregation/interface1';
 import {Access, Email, WeChat} from 'projects/java/design-pattern/principle/dependency-inversion/demo';
 import {ChangHong, LG, OAC, OACInterface, OACSetter} from 'projects/java/design-pattern/principle/dependency-inversion/three-pattern';
+import {Subject1, WindowsSubject} from 'projects/java/design-pattern/principle/open-closed/ocp-demo';
+import {Agent, Company, Fans, Star} from 'projects/java/design-pattern/principle/lod/lod-demo';
+import {GasolineAirPlane, White} from 'projects/java/design-pattern/principle/composite-reuse/crp-demo';
+import {Singleton} from 'projects/java/design-pattern/patterns/singleton-pattern/singleton.pattern';
 
 @Component({
   selector: 'app-root',
@@ -46,5 +50,23 @@ export class AppComponent {
     const oacInterface = new OACInterface();
     oacInterface.openAndClose(new ChangHong());
 
+    // 开闭原则
+    const windowsSubject = new WindowsSubject();
+    windowsSubject.display(new Subject1());
+
+
+    // 迪米特法则
+    const agent = new Agent();
+    agent.setStar(new Star('王祖贤'));
+    agent.setCompany(new Company('笑果文化'));
+    agent.setFans(new Fans('金城武'));
+    agent.meeting();
+    agent.business();
+
+    // 合成复用的原则
+    const gasolineAirPlane = new GasolineAirPlane(new White());
+    gasolineAirPlane.fly();
+
+    // 单例模式
   }
 }
