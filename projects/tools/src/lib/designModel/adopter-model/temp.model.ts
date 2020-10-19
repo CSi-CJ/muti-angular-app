@@ -5,7 +5,7 @@
  *
  */
 export interface Send {
-  //这个过程是个延时过程等待消息回应
+  // 这个过程是个延时过程等待消息回应
   sendMsg(message: string, type: string): Promise<void>;
 }
 
@@ -13,7 +13,7 @@ export interface Accept {
   acceptMsg(message: string): Promise<void>;
 }
 
-//创建适配器的以访按照原先同样的功能发送信息
+// 创建适配器的以访按照原先同样的功能发送信息
 export class ConCreateSend implements Send{
 
   public async sendMsg(message: string, type: string): Promise<void> {
@@ -22,7 +22,7 @@ export class ConCreateSend implements Send{
   }
 }
 
-//创建适配器的另一头用来接收原来的信息并处理与相同的功能转换
+// 创建适配器的另一头用来接收原来的信息并处理与相同的功能转换
 export class ConCreateAccept implements Accept {
 
   constructor(private conCreateSend: ConCreateSend) {
